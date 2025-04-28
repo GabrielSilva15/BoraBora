@@ -6,6 +6,6 @@ interface ButtonProps{
 
 export function Button ({name}:ButtonProps){
     return (
-        <button> {name}</button>
+        <button > {name}</button>
     )
 }

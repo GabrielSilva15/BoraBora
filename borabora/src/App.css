@@ -1,11 +1,26 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+  width: 100vw;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
+.rotas{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
