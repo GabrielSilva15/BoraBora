@@ -3,6 +3,7 @@ export type User ={
     name:string,
     email:string,
     password:string,
-    idade?:number,
-    cpf?:string,
+    idade:number,
+    telefone:string,
+    cpf:string,
 }

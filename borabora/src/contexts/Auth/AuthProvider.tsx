@@ -19,7 +19,7 @@ export const AuthProvider = ({children} : {children: JSX.Element})=>{
 
             if(response.data){
                 setToken(response.data);
-                setUser(getUser[0]);
+                setUser(getUser[0].id);
                 localStorage.setItem("authToken",response.data);
                 localStorage.setItem("authUser",JSON.stringify(getUser));
                 return true;
@@ -35,6 +35,8 @@ export const AuthProvider = ({children} : {children: JSX.Element})=>{
         setToken(null);
         localStorage.removeItem("authToken");
     }
+
+
 
     return (
         <AuthContext.Provider value={{token,user,signIn,signOut}}>

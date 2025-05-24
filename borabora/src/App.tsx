@@ -8,15 +8,16 @@ import "./App.css"
 
 function App() {
 
-  const {token,signOut} = useContext(AuthContext);
+  const {user,token,signOut} = useContext(AuthContext);
 
   return (
       <BrowserRouter>
         <nav className="rotas">
           {token && 
           <>
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
             <Link to="/perfil">Perfil</Link>
+            <Link to="/eventos">Eventos</Link>
             <Link to="/login" onClick={signOut}>Sair</Link>
           </>
           }

@@ -1,0 +1,64 @@
+.pageEditUser{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+    
+}
+
+.formEditUser{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25vw;
+    height: 75vh;
+    gap: 20px;
+    box-shadow: 2px 2px 2px rgba(65, 64, 64, 0.2);
+    border-radius: 10px;
+    padding: 30px;
+    background-color: rgb(235, 235, 235);
+}
+
+.dadosUser{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.dadosUser input{
+    width: 100%;
+    height: 40px;
+    background-color: #E2E2E2;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.labelImageUser{
+    display: flex;
+    align-items: center;
+}
+
+.labelImageUser label{
+    background-color: #313131;
+    border-radius: 8px;
+    color: #fff;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#fileImage{
+    display: none;
+}
+
+ #image-editUser{
+    width:150px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+ 

@@ -10,7 +10,7 @@ import { AuthContext } from "../contexts/Auth/AuthContext";
 
 const loginSchema = z.object({
     email:z.string(),
-    password:z.string()
+    password:z.string().min(5,{message:"A senha deve conter no minimo 5 caracteres"})
 })
 
 type  LoginSchema  = z.infer<typeof loginSchema>
@@ -21,14 +21,14 @@ export function Login (){
 
     const navigate = useNavigate();
 
-    const { register, handleSubmit } =  useForm<LoginSchema>({
+    const { register, handleSubmit, formState:{errors} } =  useForm<LoginSchema>({
         resolver:zodResolver(loginSchema)
     });
 
     async function handleLoginSubmit(data:LoginSchema){
         try {
             await auth.signIn(data.email,data.password);   
-            navigate("/home");
+            navigate("/");
         } catch (error) {
             console.log(error);
         }
@@ -36,29 +36,39 @@ export function Login (){
     }
 
     return (
-        <div>
-            <h1>Login</h1>
+        <div className="pageLogin">
+            
+            <div className="boxLogin">
+                <div className="headLogin">
+                    <span id="textLogin">Go Go Party's</span>
+                </div>
 
-           <form onSubmit={handleSubmit(handleLoginSubmit)} className="formLogin">
-                <span id="textLogin">Seja Bem-Vindo</span>
-                <span id="subtextLogin">Informe seu e-mail e sua senha para continuar</span>
-                <label htmlFor="" className="dadosLogin">
-                    <span>E-mail:</span>
-                    <input type="email" {...register('email')} placeholder="Digite seu e-mail..."/>
-                </label>
+                <div className="subtitleLogin">
+                    <span id="textLogin">Seja Bem-Vindo</span>
+                    <span id="subLogin">Realize seu login e esteja pronto para criar e gerenciar seus eventos</span>
+                </div>
 
-                <label htmlFor="" className="dadosLogin">
-                    <span>Senha:</span>
-                    <input type="password" {...register('password')} placeholder="Insira sua senha..."/>
-                </label>
+                <form onSubmit={handleSubmit(handleLoginSubmit)} className="formLogin">
+                    <label htmlFor="" className="dadosLogin">
+                        <span>E-mail:</span>
+                        <input type="email" {...register('email')} placeholder="Digite seu e-mail..."/>
+                        {errors.email && <span>{errors.email.message}</span>}
+                    </label>
+
+                    <label htmlFor="" className="dadosLogin">
+                        <span>Senha:</span>
+                        <input type="password" {...register('password')} placeholder="Insira sua senha..."/>
+                        {errors.password && <span>{errors.password.message}</span>}
+                    </label>
 
 
-                <button className="btnEntrar">Entrar</button>
+                    <button className="btnEntrar">Entrar</button>
 
-                <span className="textCadastre">Não tem conta ainda?<span className="cadastreAqui">Cadastre-se aqui</span></span>
+                    <span className="textCadastre">Não realizou seu cadastro ainda? <span className="cadastreAqui">Clique aqui </span>e crie sua conta</span>
 
-            {/* <Button name="Botao de enviar"/> */}
-           </form>
+                    {/* <Button name="Botao de enviar"/> */}
+                </form>
+            </div>
         </div>
     )
 }
