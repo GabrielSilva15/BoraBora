@@ -10,8 +10,8 @@
 }
 
 .dados-evento{
-    border-radius: 10px 10px 0px 0px;
-    padding: 5px;
+    border-radius: 4px;
+    padding: 8px;
     display: flex;
     justify-content: space-between;
     align-items: end;
@@ -21,13 +21,31 @@
 }
 
 .img-evento{
-    border-radius: 0px 0px  10px 10px;
+    border-radius:4px;
     width: 100%;
+    height: 200px;
 }
 
 .head-event{
     display: flex;
     flex-direction: column;
+    margin: 4px;
+    gap: 2px;
+}
+
+.adress-event, .date-event{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.adress-event svg, .date-event svg{
+   width: 20px;
+}
+
+.title-event{
+    font-weight: 700;
+    color: black;
 }
 
 .date-event, .adress-event{
@@ -42,3 +60,8 @@
     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 }
 
+.box-eventoDados{
+    height: 200px;
+    width: 300px;
+    cursor: pointer;
+}

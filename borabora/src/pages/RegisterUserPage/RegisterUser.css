@@ -1,0 +1,111 @@
+.pageCadastro{
+    display: flex;
+    height: 90vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #202027;
+}
+
+.boxCadastro{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 570px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #e2e2e2;
+}
+
+.headCadastro{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg,rgba(56, 255, 215, 1) 0%, rgba(56, 255, 215, 1) 25%, rgba(48, 230, 232, 1) 50%, rgba(40, 205, 250, 1) 75%, rgba(40, 205, 250, 1) 99%);
+    border-radius: 10px 10px 0px 0px;
+}
+
+
+
+.subtitleCadastro{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+
+.formCadastro{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+
+.dadosCadastro{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 60%;
+}
+
+.dadosCadastro span{
+    font-weight: bold;
+}
+
+.dadosCadastro input{
+    height: 40px;
+    background-color: #f0efef;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    border-radius: 8px;
+}
+
+
+#textCadastro{
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+#subCadastro{
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.btnEntrar{
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 2px 2px 2px rgba(65, 64, 64, 0.2);
+    color: white;
+    background: linear-gradient(90deg,rgba(56, 255, 215, 1) 0%, rgba(56, 255, 215, 1) 25%, rgba(48, 230, 232, 1) 50%, rgba(40, 205, 250, 1) 75%, rgba(40, 205, 250, 1) 99%);
+    cursor: pointer;
+   font-weight: bold;
+}
+
+.loginAqui{
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    font-style: italic;
+}
+
+.textCadastre{
+    text-align: center;
+    width: 340px;
+}

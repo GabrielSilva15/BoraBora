@@ -1,0 +1,14 @@
+#dados-convidados{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+#img-convidado{
+    height: 70px;
+    border-radius: 10px;
+}

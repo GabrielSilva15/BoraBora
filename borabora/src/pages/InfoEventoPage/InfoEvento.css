@@ -1,0 +1,143 @@
+
+
+.infoEventoPage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.box-evento{
+    display: flex;
+    width: 700px;
+    background-color: #f3f3f3;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#btn-editEvento{
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+#image-info{
+    height: 150px;
+    border-radius: 10px;
+}
+
+.dados-evento{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    background-color: #f3f3f3;
+}
+
+.box-convites{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#search-input{
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 4px;
+}
+
+#search-input:focus{
+    border: none;
+}  
+
+#select-convidados{
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 4px;
+}
+
+.lista-convidados{  
+    width: 80vw;
+    height: 40vh;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 10px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+}
+
+.convidado{
+    padding: 10px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    background-color: #e7e7e7;
+    border-radius: 10px;
+    gap: 5px;
+    word-wrap: break-word;
+}
+
+.box-presenca{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+#presenca{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
+
+
+.box-convidados{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    background-color: #f3f3f3;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+
+
+#btn-convidar{
+    border: none;
+    background-color: orange;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    cursor: pointer;
+    height: 30px;
+}
+
+.convidado-wrapper{
+    height: 100px;
+    width: 330px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e7e7e7;
+    border-radius: 10px;
+}

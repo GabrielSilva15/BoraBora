@@ -1,12 +1,14 @@
-import { Button } from "../components/Button"
+import { Button } from "../../components/Button/Button"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import {z} from "zod";
-import { api } from "../services/api";
+import { api } from "../../services/api";
 import "./login.css"
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext } from "../contexts/Auth/AuthContext";
+import { AuthContext } from "../../contexts/Auth/AuthContext";
+import { InputField } from "../../components/InputField/InputField";
+import { Container } from "../../components/Container/Container";
 
 const loginSchema = z.object({
     email:z.string(),
@@ -36,6 +38,7 @@ export function Login (){
     }
 
     return (
+        <Container>
         <div className="pageLogin">
             
             <div className="boxLogin">
@@ -49,26 +52,24 @@ export function Login (){
                 </div>
 
                 <form onSubmit={handleSubmit(handleLoginSubmit)} className="formLogin">
-                    <label htmlFor="" className="dadosLogin">
-                        <span>E-mail:</span>
-                        <input type="email" {...register('email')} placeholder="Digite seu e-mail..."/>
+                    <div className="dadosLogin">
+                        <InputField label="E-mail" type="email" {...register('email')} placeholder="Digite seu e-mail..."/>
                         {errors.email && <span>{errors.email.message}</span>}
-                    </label>
+                    </div>
 
-                    <label htmlFor="" className="dadosLogin">
-                        <span>Senha:</span>
-                        <input type="password" {...register('password')} placeholder="Insira sua senha..."/>
+                    <div className="dadosLogin">
+                        <InputField label="Senha"  type="password" {...register('password')} placeholder="Insira sua senha..."/>
                         {errors.password && <span>{errors.password.message}</span>}
-                    </label>
+                    </div>
 
+                    <Button name="Entrar"/>
 
-                    <button className="btnEntrar">Entrar</button>
-
-                    <span className="textCadastre">Não realizou seu cadastro ainda? <span className="cadastreAqui">Clique aqui </span>e crie sua conta</span>
+                    <span className="textCadastre">Não realizou seu cadastro ainda? <span className="cadastreAqui" onClick={()=>navigate("/cadastro")}>Clique aqui </span>e crie sua conta</span>
 
                     {/* <Button name="Botao de enviar"/> */}
                 </form>
             </div>
         </div>
+        </Container>
     )
 }

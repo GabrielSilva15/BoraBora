@@ -1,8 +1,8 @@
-import { AuthContext } from "../contexts/Auth/AuthContext"
+import { AuthContext } from "../../contexts/Auth/AuthContext"
 import { useContext, useEffect, useState } from "react"
-import { api } from "../services/api";
+import { api } from "../../services/api";
 import "./CardPerfil.css"
-import IconWrapper from "./Icon";
+import IconWrapper from "../Icon";
 import { FiEdit, FiCamera } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
@@ -15,41 +15,48 @@ export const CardPerfil = ()=>{
     const [telefone,setTelefone] = useState("");
     const [idade,setIdade] = useState("");
     const [inputFile, setInputFile] = useState<File | null>(null);
+    const [imageUrl,setImageUrl] = useState<string>("");
     const navigate = useNavigate();
 
     async function getImageUser(){
-        const response = await api.get("/user-image/"+user,{
-            headers:{
-                Authorization:`Bearer ${token}`
-            },
-            responseType:"blob"
-        }) 
-
-        const urlImage = URL.createObjectURL(response.data);
-        document.querySelector("img")!.src =urlImage; 
+       try {
+        
+       } catch (error) {
+        console.log(error);
+       }
     }
 
     async function getUser(){
         try {
             console.log("================= ID USUARIO =================");
             
-            console.log(user);
             
-            const response = await api.get("/user/"+user,{
+            const response = await api.get("/user/"+user!.id,{
                 headers:{
                     Authorization:`Bearer ${token}`
                 }
             }) 
-            console.log("aqui");
             
     
             setName(response.data.name);
             setEmail(response.data.email);
             setCpf(response.data.cpf);
             setIdade(response.data.idade);
-            setTelefone(response.data.telefone)
-            console.log(response.data);
-            console.log("deu erro");
+            setTelefone(response.data.telefone);
+
+            if(response.data.foto ){
+                const responseImage = await api.get("/user-image/"+user!.id,{
+                    headers:{
+                        Authorization:`Bearer ${token}`
+                    },
+                    responseType:"blob"
+                }) 
+        
+                const urlImage = URL.createObjectURL(responseImage.data);
+                setImageUrl(urlImage);
+            }
+
+
             
             
         } catch (error) {
@@ -78,7 +85,7 @@ export const CardPerfil = ()=>{
                 <button className="btn-edit" onClick={navigateToEditUser}>
                     <IconWrapper icon={FiEdit}/>
                 </button>
-                    <img alt="" id="image-user"/>
+                    <img alt="" id="image-user" src={imageUrl? imageUrl : "https://img.freepik.com/premium-vector/free-vector-user-icon-simple-line_901408-588.jpg"}/>
                 {/* <div className="img-box">
                     <label htmlFor='btn-editImage' >
                         <IconWrapper icon={FiCamera}/>
