@@ -6,8 +6,7 @@ export const Home = ()=>{
     return(
             <Container>
                 <NavBar/>
-                <label >Input</label>
-                <InputField  placeholder="Digite..."  type="text"/>
+
             </Container>
        
     )
